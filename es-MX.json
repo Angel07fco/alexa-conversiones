@@ -1,0 +1,102 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "slots": [
+            {
+              "name": "cantidad",
+              "type": "AMAZON.NUMBER"
+            },
+            {
+              "name": "deUnidad",
+              "type": "LISTA_DE_UNIDADES"
+            },
+            {
+              "name": "aUnidad",
+              "type": "LISTA_DE_UNIDADES"
+            }
+          ],
+          "name": "ConvertidorIntent",
+          "samples": [
+            "convierte {cantidad} {deUnidad} a {aUnidad}",
+            "quiero convertir {cantidad} {deUnidad} a {aUnidad}",
+            "transforma {cantidad} {deUnidad} a {aUnidad}",
+            "convertir {cantidad} {deUnidad} a {aUnidad}"
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "name": {
+                "synonyms": [
+                  "m"
+                ],
+                "value": "metros"
+              }
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "km",
+                  "kilometros"
+                ],
+                "value": "kilómetros"
+              }
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "cm",
+                  "centimetros"
+                ],
+                "value": "centímetros"
+              }
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "in",
+                  "inch"
+                ],
+                "value": "pulgadas"
+              }
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "ft"
+                ],
+                "value": "pies"
+              }
+            }
+          ],
+          "name": "LISTA_DE_UNIDADES"
+        }
+      ],
+      "invocationName": "convertir unidades"
+    }
+  }
+}
