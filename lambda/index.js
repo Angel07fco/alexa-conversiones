@@ -73,7 +73,7 @@ const ConvertidorIntentHandler = {
         const isEnglish = locale.startsWith('en');
         const conversionTable = isEnglish ? conversionRates : conversionEsp;
 
-        let speakOutput = 'Convertidor Oswaldo. ';
+        let speakOutput = 'Convertidor Angel. ';
 
         if (conversionTable[fromUnit] && conversionTable[fromUnit][toUnit]) {
             const convertedValue = value * conversionTable[fromUnit][toUnit];
@@ -95,7 +95,7 @@ const LaunchRequestHandler = {
     },
     handle(handlerInput) {
         const requestAttributes = handlerInput.attributesManager.getRequestAttributes();
-        const speakOutput = 'Convertidor Oswaldo. ' + requestAttributes.t('WELCOME_MESSAGE');
+        const speakOutput = 'Convertidor Angel. ' + requestAttributes.t('WELCOME_MESSAGE');
 
         return handlerInput.responseBuilder
             .speak(speakOutput)
@@ -111,7 +111,7 @@ const HelpIntentHandler = {
     },
     handle(handlerInput) {
         const requestAttributes = handlerInput.attributesManager.getRequestAttributes();
-        const speakOutput = 'Convertidor Oswaldo. ' + requestAttributes.t('HELP_MESSAGE');
+        const speakOutput = 'Convertidor Angel. ' + requestAttributes.t('HELP_MESSAGE');
 
         return handlerInput.responseBuilder
             .speak(speakOutput)
@@ -128,7 +128,7 @@ const CancelAndStopIntentHandler = {
     },
     handle(handlerInput) {
         const requestAttributes = handlerInput.attributesManager.getRequestAttributes();
-        const speakOutput = 'Convertidor Oswaldo. ' + requestAttributes.t('GOODBYE_MESSAGE');
+        const speakOutput = 'Convertidor Angel. ' + requestAttributes.t('GOODBYE_MESSAGE');
 
         return handlerInput.responseBuilder
             .speak(speakOutput)
@@ -143,7 +143,7 @@ const FallbackIntentHandler = {
     },
     handle(handlerInput) {
         const requestAttributes = handlerInput.attributesManager.getRequestAttributes();
-        const speakOutput = 'Convertidor Oswaldo. ' + requestAttributes.t('FALLBACK_MESSAGE');
+        const speakOutput = 'Convertidor Angel. ' + requestAttributes.t('FALLBACK_MESSAGE');
 
         return handlerInput.responseBuilder
             .speak(speakOutput)
@@ -169,7 +169,7 @@ const IntentReflectorHandler = {
     handle(handlerInput) {
         const requestAttributes = handlerInput.attributesManager.getRequestAttributes();
         const intentName = Alexa.getIntentName(handlerInput.requestEnvelope);
-        const speakOutput = 'Convertidor Oswaldo. ' + requestAttributes.t('REFLECTOR_MESSAGE', intentName);
+        const speakOutput = 'Convertidor Angel. ' + requestAttributes.t('REFLECTOR_MESSAGE', intentName);
 
         return handlerInput.responseBuilder
             .speak(speakOutput)
@@ -184,7 +184,7 @@ const ErrorHandler = {
     },
     handle(handlerInput, error) {
         const requestAttributes = handlerInput.attributesManager.getRequestAttributes();
-        const speakOutput = 'Convertidor Oswaldo. ' + requestAttributes.t('ERROR_MESSAGE');
+        const speakOutput = 'Convertidor Angel. ' + requestAttributes.t('ERROR_MESSAGE');
         console.log(`~~~~ Error handled: ${JSON.stringify(error)}`);
 
         return handlerInput.responseBuilder
@@ -238,4 +238,3 @@ exports.handler = Alexa.SkillBuilders.custom()
     .addResponseInterceptors(LoggingResponseInterceptor)
     .withCustomUserAgent('sample/convertidor-unidades/v1.0')
     .lambda();
-
